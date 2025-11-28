@@ -5,7 +5,7 @@ package("awakelion-logger")
     add_deps("ixwebsocket v11.4.6")
 
     add_urls("https://github.com/AwakeLion-Robot-Lab/awakelion-logger.git")
-    add_versions("1.2.3", "b5decae484bf80bcd0aa6817d65a5aeb1b0719a8")
+    add_versions("1.2.4", "179489a39be4f6b69320f6ae7b4756bff24b3388")
 
     on_install(function (package)
         local configs = {}
@@ -19,7 +19,9 @@ package("awakelion-logger")
         assert(package:check_cxxsnippets({test = [[
             #include "aw_logger/aw_logger.hpp"
             void test() {
-                auto logger = aw_logger::getLogger("test_package");
+                auto logger = aw_logger::getLogger("test");
+                if(logger != nullptr) 
+                    AW_LOG_NOTICE("hello, awakelion-logger!");
             }
         ]]}, {configs = {languages = "c++20"}}))
     end)
