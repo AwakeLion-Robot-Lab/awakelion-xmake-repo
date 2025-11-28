@@ -21,7 +21,7 @@ package("awakelion-logger")
             void test() {
                 auto logger = aw_logger::getLogger("test");
                 if(logger != nullptr) 
-                    AW_LOG_NOTICE("hello, awakelion-logger!");
+                    AW_LOG_NOTICE(logger, "hello, awakelion-logger!");
             }
         ]]}, {configs = {languages = "c++20"}}))
     end)

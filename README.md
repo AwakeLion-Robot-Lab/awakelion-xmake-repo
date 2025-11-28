@@ -17,3 +17,10 @@ if the pull request add a brand-new repository:
 # for example:
 "add `awakelion-viewer`, initial version is `v1.0.0`."
 ```
+
+if you only want to refine `xmake.lua` of remote package:
+```
+"refine `{$REPO_NAME}`, which version is `v{$MAJOR}.{$MINOR}.{$PATCH}`."
+# for example:
+"refine `awakelion-viewer`, which version is `v1.0.2`."
+```
