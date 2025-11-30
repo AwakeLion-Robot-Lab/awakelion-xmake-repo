@@ -13,6 +13,7 @@ package("awakelion-logger")
 
     on_load(function (package)
         package:add("includedirs", package:installdir("include"))
+        package:add("resdirs", package:installdir("share/aw_logger"))
     end)
 
     on_install(function (package)
@@ -20,6 +21,17 @@ package("awakelion-logger")
         if package:config("shared") then
             configs.kind = "shared"
         end
+        configs.target = "fosu-awakelion.awakelion-logger"
         import("package.tools.xmake").install(package, configs)
     end)
 
+    on_test(function (package)
+        assert(package:check_cxxsnippets({test = [[
+            #include "aw_logger/aw_logger.hpp"
+            void test() {
+                auto logger = aw_logger::getLogger("test");
+                if(logger != nullptr)
+                    AW_LOG_NOTICE(logger, "hello, awakelion-logger!");
+            }
+        ]]}, {configs = {languages = "c++20"}}))
+    end)
