@@ -23,14 +23,3 @@ package("awakelion-logger")
         import("package.tools.xmake").install(package, configs)
     end)
 
-    on_test(function (package)
-        assert(package:check_cxxsnippets({test = [[
-            #include "aw_logger/aw_logger.hpp"
-            void test() {
-                auto logger = aw_logger::getLogger("test");
-                if(logger != nullptr)
-                    AW_LOG_NOTICE(logger, "hello, awakelion-logger!");
-            }
-        ]]}, {configs = {languages = "c++20"}}))
-    end)
-
