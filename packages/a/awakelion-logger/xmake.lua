@@ -5,6 +5,8 @@ package("awakelion-logger")
     add_deps("ixwebsocket v11.4.6")
 
     add_urls("https://github.com/AwakeLion-Robot-Lab/awakelion-logger.git")
+
+    add_versions("1.2.5", "6adc04c43715569b65786b5f4eb13de9f37fbe20")
     add_versions("1.2.4", "4cdc771350c2ca7ac635d985b40a4d5a61cc0306")
 
     on_install(function (package)
