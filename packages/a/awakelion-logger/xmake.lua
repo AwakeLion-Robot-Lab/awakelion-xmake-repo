@@ -15,7 +15,6 @@ package("awakelion-logger")
         if package:config("shared") then
             configs.kind = "shared"
         end
-        configs.target = "fosu-awakelion.awakelion-logger"
         import("package.tools.xmake").install(package, configs)
     end)
 
