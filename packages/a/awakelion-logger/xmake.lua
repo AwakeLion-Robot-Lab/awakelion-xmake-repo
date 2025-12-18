@@ -8,6 +8,7 @@ package("awakelion-logger")
 
     add_urls("https://github.com/AwakeLion-Robot-Lab/awakelion-logger.git")
 
+    add_versions("1.0.1", "2d10e1273e0c73ec618a579807c74ea7f61a08ca")
     add_versions("1.0.0", "3bf0268e5fe2bb97faae850c00fad8667fa0b7c2")
 
     on_install(function (package)
